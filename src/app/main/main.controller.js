@@ -21,18 +21,18 @@
     $scope.embed.path = null;
     $scope.next.label= 'next';
 
-    // Watch path attribute.
+    // Watch async trigger attribute.
     $scope.$watch(function () { return discogs.fetchTrigger }, function (newValue) {
 
       console.log('Updating iframe src', newValue);
       if (discogs.videoPath !== null) {
         // Update scope.
-        videoUpdate(newValue, discogs.videoTitle);
+        videoUpdate();
       }
     });
 
     // Changing scope varables on path update.
-    function videoUpdate (path, title) {
+    function videoUpdate () {
       $scope.embed.path = $sce.trustAs('resourceUrl', discogs.videoPath + youtubeSettings);
       $scope.embed.title = discogs.videoTitle;
       $scope.next.label = discogs.videoQue.list[1] ? 'next: ' + discogs.videoQue.list[1].title : '...'
