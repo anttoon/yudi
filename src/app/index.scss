@@ -1,0 +1,114 @@
+/**
+ * Import order
+ *
+ * Because inuitcss is broken apart into lots of small, composable modules, it is important
+ * that you as the developer piece things together in the correct order.
+ *
+ * That order is:
+ * Settings: Global variables, site-wide settings, config switches, etc.
+ * Tools: Site-wide mixins and functions.
+ * Generic: Low-specificity, far-reaching rulesets (e.g. resets).
+ * Base: Unclassed HTML elements (e.g. a {}, blockquote {}, address {}).
+ * Objects: Objects, abstractions, and design patterns (e.g. .media {}).
+ * Components: Discrete, complete chunks of UI (e.g. .carousel {}).
+ *
+ * This is the one layer that inuitcss doesn’t get involved with.
+ *
+ * Trumps: High-specificity, very explicit selectors. Overrides and helper classes (e.g. .hidden {}).
+ *
+ */
+/* Do not remove this comments bellow. It's the markers used by wiredep to inject
+   sass dependencies when defined in the bower.json of your dependencies */
+
+// bower:scss
+// endbower
+/* Do not remove this comments bellow. It's the markers used by gulp-inject to inject
+   all your sass files automatically */
+
+// injector
+// endinjector
+/**
+ * Settings
+ */
+
+@import url("//fonts.googleapis.com/css?family=Montserrat:400,700");
+@import "theme/settings/defaults";
+@import "bower_components/inuit.css/inuit";
+/**
+ * Tools
+ */
+/**
+ * Generic
+ */
+/**
+ * Base
+ */
+
+body {
+  background: #f28979;
+  color: #fff;
+}
+
+// export to own file when it becomes more then 40 lines
+/**
+ * Objects
+ */
+
+.position-anchor {
+  position: relative;
+}
+
+.fancy {
+  font-family: 'Montserrat', Arial, serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+}
+
+.responsive-embed {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+.responsive-embed__iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.btn {
+  background: #fff;
+  color:#f28979;
+}
+
+.style-picker-trigger {
+  color: #B6D3FC;
+}
+
+.style-picker {
+  background: #f28979;
+  margin: 0;
+
+  .style-picker__option {
+    width: 33%;
+    list-style: none;
+    float: left;
+    padding: 0 $base-spacing-unit;
+  }
+}
+
+.ribbon{
+  position: absolute;
+  top: 22px;
+  left: -49px;
+  padding: 0 (2*$base-spacing-unit);
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  box-shadow: 3px 3px 10px #562B25;
+  background: #7C79F2;
+}
